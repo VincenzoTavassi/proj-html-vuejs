@@ -17,19 +17,66 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* section {
+  margin: 0px 0px 100px 100px;
+} */
+
+section {
+  padding: 50px 100px;
+}
+
+/* BUTTONS */
+
+.btn-white {
+  color: var(--bk-dark-violet);
+  background-color: #ffffff;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.btn-white:hover {
+  color: #ffffff;
+  background-color: var(--bk-dark-violet);
+}
+
+.btn-purple {
+  background-color: var(--bk-dark-violet);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.btn-purple:hover {
+  background-color: var(--bk-light-violet-01);
+  color: var(--bk-dark-violet);
+}
+
 /* HEADER  */
 
 header {
   background-color: var(--bk-dark-violet);
   background-image: url(../img/hero-header-bakery.jpg);
   background-size: cover;
-  height: 95vh;
+  min-height: 95vh;
 }
 
 #demos,
 #on-sale {
   height: 100px;
-  /* border: 1px dashed green; */
   display: flex;
   justify-content: flex-end;
 }
@@ -128,7 +175,7 @@ nav > ul > li:hover {
   font-weight: bold;
 }
 
-#hero .intro small {
+small {
   text-transform: uppercase;
   color: var(--bk-text);
   font-size: 0.7rem;
@@ -141,14 +188,125 @@ nav > ul > li:hover {
   font-size: 1.1rem;
 }
 
-.btn-white {
-  color: var(--bk-dark-violet);
-  background-color: #ffffff;
-  font-weight: 600;
-  padding: 10px 20px;
+/* OUR PRODUCTS  */
+
+#our-products {
+  margin-top: 100px;
 }
 
-.btn-white:hover {
-  color: #ffffff;
+.call-to-action {
+  align-self: flex-start;
+}
+
+.product-carousel {
+  position: relative;
+}
+
+.product-hover {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.product-carousel:hover .product-hover {
+  display: block;
+}
+
+.product-hover small {
+  font-size: 0.7rem;
+  color: white;
+}
+
+.arrow {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  display: flex;
+  height: 80px;
+  color: white;
+  background-color: #a691b2;
+  cursor: pointer;
+}
+
+.arrow:hover {
   background-color: var(--bk-dark-violet);
+}
+
+.left-arrow {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.right-arrow {
+  top: 50%;
+  right: 0px;
+  transform: translate(0, -50%);
+}
+
+/* SPECIAL MOMENTS SECTION  */
+
+.special-moments-images {
+  position: relative;
+}
+
+.special-moments-images:hover .product-hover {
+  display: block;
+}
+
+.special-moments-images:hover .image-front-1,
+.special-moments-images:hover .image-front-2 {
+  display: none;
+}
+
+.special-moments-images:hover .image-back-1,
+.special-moments-images:hover .image-back-2 {
+  display: block;
+}
+
+.image-back-1,
+.image-back-2 {
+  display: none;
+}
+
+#special-moments .product-hover {
+  font-size: 2.5rem;
+}
+
+/* FIND PRODUCTS  */
+
+#find-products h3 {
+  margin-top: 20px;
+}
+
+#find-products .call-to-action {
+  align-self: center;
+  width: 90%;
+}
+
+#find-products .call-to-action p {
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #7e8388;
+}
+
+/* SHOWCASE SECTIONS  */
+/* SHOWCASE SECTION 01  */
+
+#showcase-01 {
+  color: white;
+  height: 70vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.showcase-ingredients {
+  background-image: url("../img/bakery-process-1.jpg");
+  opacity: 0.7;
 }
