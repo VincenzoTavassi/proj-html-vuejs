@@ -39,9 +39,9 @@
       <!-- HEADER -->
       <header>
         <!-- NAVBAR  -->
-        <nav class="d-flex justify-content-between px-5 py-4">
+        <nav class="d-flex justify-content-between pe-5 ps-3 py-4">
           <a href="#">
-            <img src="./img/avada-bakery-logo.png" alt="Bakery Logo" />
+            <img :src="logo" alt="Bakery Logo" />
           </a>
           <ul class="d-flex align-items-center">
             <li
@@ -53,7 +53,9 @@
             <li class="cart me-0">
               <a href="#"
                 ><i class="me-1 fa-solid fa-cart-shopping"></i>
-                <div class="order-count">{{orderCount}}</div></a
+                <div v-if="orderCount > 0" class="order-count">
+                  {{orderCount}}
+                </div></a
               >
             </li>
           </ul>
@@ -454,21 +456,13 @@
         <div class="row justify-content-between">
           <div class="col-7">
             <a href="#">
-              <img src="./img/avada-bakery-logo.png" alt="Bakery Logo" />
+              <img :src="logo" alt="Bakery Logo" />
             </a>
             <nav class="d-flex justify-content-between mt-4 py-4">
               <ul class="d-flex align-items-center">
                 <li v-for="link in footerLinks">
                   <a :href="link.link">{{link.text}}</a>
                 </li>
-                <!-- <li class=""><a href="#">home</a></li>
-                <li class=""><a href="#">shop</a></li>
-                <li class=""><a href="#">about</a></li>
-                <li class=""><a href="#">gallery</a></li>
-                <li class=""><a href="#">locations</a></li>
-                <li class=""><a href="#">journal</a></li>
-                <li class=""><a href="#">contact</a></li>
-                <li class=""><a href="#">orders</a></li> -->
                 <li class="cart me-0">
                   <a href="#"
                     ><i class="me-1 fa-solid fa-cart-shopping"></i>

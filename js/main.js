@@ -23,6 +23,7 @@ createApp({
         { text: "contacts", active: false, link: "#" },
         { text: "orders", active: false, link: "#" },
       ],
+      logo: "./img/avada-bakery-logo.png",
       orderCount: 2,
     };
   },
