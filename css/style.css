@@ -31,6 +31,14 @@ h3 {
   font-weight: bold;
 }
 
+small {
+  text-transform: uppercase;
+  color: var(--bk-text);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
 /* section {
   margin: 0px 0px 100px 100px;
 } */
@@ -175,14 +183,6 @@ nav > ul > li:hover {
   font-weight: bold;
 }
 
-small {
-  text-transform: uppercase;
-  color: var(--bk-text);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
 #hero .intro p {
   color: var(--bk-text);
   font-size: 1.1rem;
@@ -298,15 +298,171 @@ small {
 }
 
 /* SHOWCASE SECTIONS  */
-/* SHOWCASE SECTION 01  */
-
-#showcase-01 {
+section[id^="showcase-"] {
   color: white;
-  height: 70vh;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.showcase-ingredients {
-  background-image: url("../img/bakery-process-1.jpg");
-  opacity: 0.7;
+/* SHOWCASE SECTION 01  */
+
+.showcase-bg {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.showcase-bg img {
+  opacity: 0.5;
+  height: 80vh;
+}
+
+.showcase-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 70px;
+}
+
+.showcase-box small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.showcase-text {
+  width: 35%;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.showcase-title h2 {
+  font-size: 3.5rem;
+}
+
+.showcase-title span {
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+.showcase-text p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+/* SHOWCASE SECTION 02  */
+#showcase-02 .showcase-text {
+  align-self: flex-start;
+  width: 60%;
+}
+
+#showcase-02 .showcase-quote-bg {
+  background-color: var(--bk-light-violet-01);
+  height: 80vh;
+}
+
+#showcase-02 .showcase-quote-bg .quote-text {
+  font-size: 2.8rem;
+  color: var(--bk-dark-violet);
+  font-weight: 700;
+}
+
+#showcase-02 .quote small,
+#showcase-02 .quote span {
+  color: var(--bk-text);
+}
+
+/* SHOWCASE SECTION 03  */
+
+#showcase-03 .showcase-text {
+  align-self: flex-start;
+}
+
+/* LOCATIONS SECTION  */
+
+#locations .location-01 {
+  background-color: hsl(192deg 56% 96%);
+}
+
+#locations .location-02 {
+  background-color: var(--bk-cream);
+}
+
+#locations h3 {
+  font-weight: bolder;
+  font-size: 2.2rem;
+}
+
+#locations p,
+#locations small {
+  color: var(--bk-text);
+}
+
+/* SHARE SECTION  */
+
+#share .share-box {
+  background-color: var(--bk-light-violet-02);
+  height: 100%;
+}
+
+#share .share-text {
+  height: 100%;
+}
+
+#share h3 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+#share .btn-purple:hover {
+  background-color: #ffffff;
+}
+
+/* SHOP SECTION  */
+#shop {
+  background-image: url("../img/call-to-action-bg.jpg");
+  color: white;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+#shop small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#shop h2 {
+  font-size: 3rem;
+}
+
+#shop .btn-white {
+  font-size: 1.2rem;
+  padding: 10px 35px;
+}
+
+/* FOOTER  */
+footer nav {
+  text-transform: capitalize;
+}
+
+footer nav ul li {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+#order-count {
+  height: 10px;
+  width: 10px;
+  padding: 3px 6px;
+  border-radius: 50%;
+  background-color: var(--bk-light-violet-01);
+  font-size: 1rem;
+}
+
+#copyright {
+  color: var(--bk-text);
+  font-size: 0.9rem;
+  margin: 100px 0;
+}
+
+#email-input {
+  width: 50%;
+  padding: 11px;
+  border: 1px solid lightgray;
 }
