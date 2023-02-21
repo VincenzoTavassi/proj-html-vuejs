@@ -27,7 +27,8 @@
       referrerpolicy="no-referrer"
     />
     <!-- VUE JS  -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/main.js" defer></script>
@@ -38,38 +39,43 @@
       <!-- HEADER -->
       <header>
         <!-- NAVBAR  -->
-        <nav class="d-flex justify-content-between px-4 py-3">
+        <nav class="d-flex justify-content-between px-5 py-4">
           <a href="#">
             <img src="./img/avada-bakery-logo.png" alt="Bakery Logo" />
           </a>
           <ul class="d-flex align-items-center">
-            <li class=""><a href="#">HOME</a></li>
-            <li class=""><a href="#">SHOP</a></li>
-            <li class=""><a href="#">ABOUT</a></li>
-            <li class=""><a href="#">GALLERY</a></li>
-            <li class=""><a href="#">LOCATIONS</a></li>
-            <li class=""><a href="#">JOURNAL</a></li>
-            <li class=""><a href="#">CONTACT</a></li>
-            <li class=""><a href="#">MY ACCOUNT</a></li>
-            <li class="me-0">
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <li
+              v-for="link in headerLinks"
+              :class="link.active == true ? 'active' : ''"
+            >
+              <a :href="link.link">{{link.text}}</a>
+            </li>
+            <li class="cart me-0">
+              <a href="#"
+                ><i class="me-1 fa-solid fa-cart-shopping"></i>
+                <div class="order-count">{{orderCount}}</div></a
+              >
             </li>
           </ul>
         </nav>
         <!-- HERO SECTION -->
-        <section id="hero" class="container-fluid d-flex flex-column">
-          <!-- DEMOS BOX -->
-          <div id="demos" class="my-2">
-            <a href="#"
-              ><i class="fa-solid fa-book"></i>
-              <p class="mb-0">Demos</p></a
-            >
-          </div>
-          <!-- ON SALE BOX -->
-          <div id="on-sale">
-            <div class="price">
-              <div class="price-tag"><span>$</span>39</div>
-              <div class="price-text">On Sale</div>
+        <section id="hero" class="pt-0 container-fluid d-flex flex-column">
+          <div id="fixed-icons">
+            <div class="icons-blur">
+              <!-- DEMOS BOX -->
+              <div id="demos" class="my-2">
+                <a href="#"
+                  ><i class="fa-solid fa-book"></i>
+                  <p class="mb-0">Demos</p></a
+                >
+              </div>
+              <!-- ON SALE BOX -->
+              <div id="on-sale">
+                <div class="price">
+                  <div class="price-tag"><span>$</span>39</div>
+                  <div class="price-text">On Sale</div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- INTRO HERO TEXT  -->
@@ -393,7 +399,7 @@
         </section>
         <!-- SOCIAL SHARING SECTION  -->
         <section id="share">
-          <div class="container-fluid">
+          <div class="container-fluid p-0">
             <div class="row g-5">
               <div class="col-3">
                 <img src="./img/social-1.jpg" alt="" />
@@ -446,23 +452,28 @@
       <!-- FOOTER -->
       <footer class="px-5 container-fluid">
         <div class="row justify-content-between">
-          <div class="col-6">
+          <div class="col-7">
             <a href="#">
               <img src="./img/avada-bakery-logo.png" alt="Bakery Logo" />
             </a>
             <nav class="d-flex justify-content-between mt-4 py-4">
               <ul class="d-flex align-items-center">
-                <li class=""><a href="#">home</a></li>
+                <li v-for="link in footerLinks">
+                  <a :href="link.link">{{link.text}}</a>
+                </li>
+                <!-- <li class=""><a href="#">home</a></li>
                 <li class=""><a href="#">shop</a></li>
                 <li class=""><a href="#">about</a></li>
                 <li class=""><a href="#">gallery</a></li>
                 <li class=""><a href="#">locations</a></li>
                 <li class=""><a href="#">journal</a></li>
                 <li class=""><a href="#">contact</a></li>
-                <li class=""><a href="#">orders</a></li>
-                <li class="me-0">
-                  <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                  <span id="order-count">0</span>
+                <li class=""><a href="#">orders</a></li> -->
+                <li class="cart me-0">
+                  <a href="#"
+                    ><i class="me-1 fa-solid fa-cart-shopping"></i>
+                    <span class="order-count">{{orderCount}}</span></a
+                  >
                 </li>
               </ul>
             </nav>
@@ -481,6 +492,12 @@
               id="email-input"
             />
             <button type="button" class="btn btn-purple">Subscribe</button>
+            <div id="social-icons" class="">
+              <i class="me-5 fa-brands fa-instagram"></i>
+              <i class="me-5 fa-brands fa-twitter"></i>
+              <i class="me-5 fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-pinterest"></i>
+            </div>
           </div>
         </div>
       </footer>
