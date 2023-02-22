@@ -97,6 +97,7 @@
       </header>
       <!-- MAIN  -->
       <main>
+        <!-- OUR PRODUCTS SECTION  -->
         <section id="our-products">
           <div class="container-fluid">
             <div class="row align-items-center justify-content-between">
@@ -109,33 +110,35 @@
                 </h2>
                 <div class="btn btn-purple mt-4">Start Shopping</div>
               </div>
+
               <div class="col-4">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/choco-chip-cookies.jpg" alt="" />
+                    <img :src="firstTopSlide.img" alt="" />
                   </div>
-                  <div class="arrow left-arrow">
+                  <div @click="moveBack" class="arrow left-arrow">
                     <i class="fa-solid fa-chevron-left"></i>
                   </div>
                   <div class="product-hover text-center">
-                    <p>Choco chip cookies</p>
-                    <small>Cookies, Pastries</small>
-                    <p>$19.00 - 39.00</p>
+                    <p>{{firstTopSlide.text}}</p>
+                    <small>{{firstTopSlide.category}}</small>
+                    <p>{{firstTopSlide.price}}</p>
                   </div>
                 </div>
               </div>
+
               <div class="col-4">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/strawberry-jam-cookies.jpg" alt="" />
+                    <img :src="secondTopSlide.img" alt="" />
                   </div>
-                  <div class="arrow right-arrow">
+                  <div @click="moveForward()" class="arrow right-arrow">
                     <i class="fa-solid fa-chevron-right"></i>
                   </div>
                   <div class="product-hover text-center">
-                    <p>Choco chip cookies</p>
-                    <small>Cookies, Pastries</small>
-                    <p>$19.00 - 39.00</p>
+                    <p>{{secondTopSlide.text}}</p>
+                    <small>{{secondTopSlide.category}}</small>
+                    <p>{{secondTopSlide.price}}</p>
                   </div>
                 </div>
               </div>
@@ -208,17 +211,45 @@
                   <div class="btn btn-purple mt-4">Shop All Products</div>
                 </div>
               </div>
-              <div class="col">
+
+              <!-- <div v-for="(slide, index) in productSlider" class="col">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/choco-chip-cookies.jpg" alt="" />
+                    <img :src="products[productSlider[slide]].img" alt="" />
                   </div>
-                  <h3>Choco Chip Cookies</h3>
-                  <p class="fs-5">$19.00 - $39.00</p>
+                  <h3>{{slideThree.text}}</h3>
+                  <p class="fs-5">{{slideThree.price}}</p>
                   <div class="product-hover text-center">
                     <small>select options / quick view</small>
                   </div>
-                  <div class="arrow left-arrow">
+                  <div
+                    v-show="index == productSlider.length - 1"
+                    @click="sliderForward()"
+                    class="arrow right-arrow"
+                  >
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                  <div
+                    v-show="index == productSlider[0]"
+                    @click="sliderBack()"
+                    class="arrow left-arrow"
+                  >
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="col">
+                <div class="product-carousel">
+                  <div class="product-img-bg">
+                    <img :src="slideZero.img" alt="" />
+                  </div>
+                  <h3>{{slideZero.text}}</h3>
+                  <p class="fs-5">{{slideZero.price}}</p>
+                  <div class="product-hover text-center">
+                    <small>select options / quick view</small>
+                  </div>
+                  <div @click="sliderBack()" class="arrow left-arrow">
                     <i class="fa-solid fa-chevron-left"></i>
                   </div>
                 </div>
@@ -226,10 +257,10 @@
               <div class="col">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/strawberry-jam-cookies.jpg" alt="" />
+                    <img :src="slideOne.img" alt="" />
                   </div>
-                  <h3>Strawberry Jam Cookies</h3>
-                  <p class="fs-5">$24.00 - $62.00</p>
+                  <h3>{{slideOne.text}}</h3>
+                  <p class="fs-5">{{slideOne.price}}</p>
                   <div class="product-hover text-center">
                     <small>select options / quick view</small>
                   </div>
@@ -238,10 +269,10 @@
               <div class="col">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/strawberry-donut.jpg" alt="" />
+                    <img :src="slideTwo.img" alt="" />
                   </div>
-                  <h3>Strawberry Donut</h3>
-                  <p class="fs-5">$24.00 - $42.00</p>
+                  <h3>{{slideTwo.text}}</h3>
+                  <p class="fs-5">{{slideTwo.price}}</p>
                   <div class="product-hover text-center">
                     <small>select options / quick view</small>
                   </div>
@@ -250,15 +281,15 @@
               <div class="col">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img src="./img/perfect-macarons.jpg" alt="" />
+                    <img :src="slideThree.img" alt="" />
                   </div>
-                  <h3>Perfect Macarons</h3>
-                  <p class="fs-5">$18.00 - $52.00</p>
+                  <h3>{{slideThree.text}}</h3>
+                  <p class="fs-5">{{slideThree.price}}</p>
                   <div class="product-hover text-center">
                     <small>select options / quick view</small>
                   </div>
-                  <div class="arrow right-arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
+                  <div @click="sliderForward()" class="arrow right-arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
