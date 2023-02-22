@@ -6,7 +6,7 @@ createApp({
       headerLinks: [
         { text: "home", active: true, link: "#" },
         { text: "shop", active: false, link: "#" },
-        { text: "about", active: false, link: "#" },
+        { text: "about", active: false, link: "#our-products" },
         { text: "gallery", active: false, link: "#" },
         { text: "locations", active: false, link: "#locations" },
         { text: "journal", active: false, link: "#" },
@@ -16,7 +16,7 @@ createApp({
       footerLinks: [
         { text: "home", active: false, link: "#" },
         { text: "shop", active: false, link: "#" },
-        { text: "about", active: false, link: "#" },
+        { text: "about", active: false, link: "#our-products" },
         { text: "gallery", active: false, link: "#" },
         { text: "locations", active: false, link: "#locations" },
         { text: "journal", active: false, link: "#" },
@@ -73,18 +73,6 @@ createApp({
     },
     secondTopSlide() {
       return this.products[this.activeProducts[1]];
-    },
-    slideZero() {
-      return this.products[this.productSlider[0]];
-    },
-    slideOne() {
-      return this.products[this.productSlider[1]];
-    },
-    slideTwo() {
-      return this.products[this.productSlider[2]];
-    },
-    slideThree() {
-      return this.products[this.productSlider[3]];
     },
   },
   methods: {

@@ -212,84 +212,29 @@
                 </div>
               </div>
 
-              <!-- <div v-for="(slide, index) in productSlider" class="col">
+              <div v-for="(slide, index) in productSlider" class="col">
                 <div class="product-carousel">
                   <div class="product-img-bg">
-                    <img :src="products[productSlider[slide]].img" alt="" />
+                    <img :src="products[slide].img" alt="" />
                   </div>
-                  <h3>{{slideThree.text}}</h3>
-                  <p class="fs-5">{{slideThree.price}}</p>
+                  <h3>{{products[slide].text}}</h3>
+                  <p class="fs-5">{{products[slide].price}}</p>
                   <div class="product-hover text-center">
                     <small>select options / quick view</small>
                   </div>
                   <div
-                    v-show="index == productSlider.length - 1"
+                    v-if="index == 3"
                     @click="sliderForward()"
                     class="arrow right-arrow"
                   >
                     <i class="fa-solid fa-chevron-right"></i>
                   </div>
                   <div
-                    v-show="index == productSlider[0]"
+                    v-if="index == 0"
                     @click="sliderBack()"
                     class="arrow left-arrow"
                   >
                     <i class="fa-solid fa-chevron-left"></i>
-                  </div>
-                </div>
-              </div> -->
-
-              <div class="col">
-                <div class="product-carousel">
-                  <div class="product-img-bg">
-                    <img :src="slideZero.img" alt="" />
-                  </div>
-                  <h3>{{slideZero.text}}</h3>
-                  <p class="fs-5">{{slideZero.price}}</p>
-                  <div class="product-hover text-center">
-                    <small>select options / quick view</small>
-                  </div>
-                  <div @click="sliderBack()" class="arrow left-arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="product-carousel">
-                  <div class="product-img-bg">
-                    <img :src="slideOne.img" alt="" />
-                  </div>
-                  <h3>{{slideOne.text}}</h3>
-                  <p class="fs-5">{{slideOne.price}}</p>
-                  <div class="product-hover text-center">
-                    <small>select options / quick view</small>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="product-carousel">
-                  <div class="product-img-bg">
-                    <img :src="slideTwo.img" alt="" />
-                  </div>
-                  <h3>{{slideTwo.text}}</h3>
-                  <p class="fs-5">{{slideTwo.price}}</p>
-                  <div class="product-hover text-center">
-                    <small>select options / quick view</small>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="product-carousel">
-                  <div class="product-img-bg">
-                    <img :src="slideThree.img" alt="" />
-                  </div>
-                  <h3>{{slideThree.text}}</h3>
-                  <p class="fs-5">{{slideThree.price}}</p>
-                  <div class="product-hover text-center">
-                    <small>select options / quick view</small>
-                  </div>
-                  <div @click="sliderForward()" class="arrow right-arrow">
-                    <i class="fa-solid fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
